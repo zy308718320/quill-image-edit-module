@@ -1,0 +1,4 @@
+config-overrides.js
+/dist/*
+/config/*
+*.config.js
