@@ -16,12 +16,6 @@
     ],
     "moduleResolution": "node",
     "downlevelIteration": true,
-    "baseUrl": ".",
-    "paths": {
-      "parchment": [
-        "node_modules/parchment/src/parchment"
-      ]
-    }
   },
   "include": [
     "src",

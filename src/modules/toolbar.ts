@@ -1,12 +1,12 @@
-import * as Parchment from 'parchment';
+import Parchment from 'parchment';
 import IconAlignLeft from 'quill/assets/icons/align-left.svg';
 import IconAlignCenter from 'quill/assets/icons/align-center.svg';
 import IconAlignRight from 'quill/assets/icons/align-right.svg';
 import { BaseModule } from './BaseModule';
 
-const FloatStyle = new Parchment.StyleAttributor('float', 'float');
-const MarginStyle = new Parchment.StyleAttributor('margin', 'margin');
-const DisplayStyle = new Parchment.StyleAttributor('display', 'display');
+const FloatStyle = new Parchment.Attributor.Style('float', 'float');
+const MarginStyle = new Parchment.Attributor.Style('margin', 'margin');
+const DisplayStyle = new Parchment.Attributor.Style('display', 'display');
 
 export default class Toolbar extends BaseModule {
   private toolbar: any;
@@ -59,7 +59,6 @@ export default class Toolbar extends BaseModule {
     const buttons: HTMLElement[] = [];
     this.alignments.forEach((alignment: any, idx: number) => {
       const button = document.createElement('span');
-      console.log('button', button);
       buttons.push(button);
       button.innerHTML = alignment.icon;
       button.addEventListener('click', () => {
@@ -70,7 +69,7 @@ export default class Toolbar extends BaseModule {
           FloatStyle.remove(this.img);
           MarginStyle.remove(this.img);
           DisplayStyle.remove(this.img);
-        }				else {
+        }	else {
           // otherwise, select button and apply
           this._selectButton(button);
           alignment.apply();
