@@ -9,6 +9,8 @@
     "sourceMap": true,
     "outDir": "./dist",
     "strict": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
     "lib": [
       "dom",
       "dom.iterable",

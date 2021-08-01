@@ -81,7 +81,7 @@ export default class Toolbar extends BaseModule {
       if (idx > 0) {
         button.style.borderLeftWidth = '0';
       }
-      Object.assign((button.children[0] as HTMLElement).style, this.options.toolbarButtonSvgStyles);
+      // Object.assign((button.children[0] as HTMLElement).style, this.options.toolbarButtonSvgStyles);
       if (alignment.isApplied()) {
         // select button if previously applied
         this._selectButton(button);

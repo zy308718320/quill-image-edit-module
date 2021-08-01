@@ -1,3 +1,4 @@
+import Quill from 'quill';
 import { defaultsDeep } from 'lodash';
 import DefaultOptions from './defaultOptions';
 import DisplaySize from './modules/displaySize';
@@ -54,7 +55,7 @@ export default class ImageEdit {
 
   initializeModules = () => {
     this.removeModules();
-
+    
     this.modules = this.moduleClasses.map(
       item => new (knownModules[item] || item)(this),
     );
@@ -70,6 +71,7 @@ export default class ImageEdit {
 
   onUpdate = () => {
     this.repositionElements();
+    
     this.modules.forEach(
       (module) => {
         module.onUpdate();
@@ -196,7 +198,7 @@ export default class ImageEdit {
   checkImage = (evt: KeyboardEvent) => {
     if (this.img) {
       if (evt.keyCode == 46 || evt.keyCode == 8) {
-        this.quill.find(this.img).deleteAt(0);
+        Quill.find(this.img).deleteAt(0);
       }
       this.hide();
     }
