@@ -1,12 +1,14 @@
 export class BaseModule {
   protected overlay: any;
   protected img: any;
+  protected hide: any;
   protected options: any;
   protected requestUpdate: any;
 
   constructor(edit: any) {
     this.overlay = edit.overlay;
     this.img = edit.img;
+    this.hide = edit.hide;
     this.options = edit.options;
     this.requestUpdate = edit.onUpdate;
   }

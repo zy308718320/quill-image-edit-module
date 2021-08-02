@@ -1,7 +1,7 @@
-import { BaseModule } from './BaseModule';
+import { BaseModule } from './baseModule';
 
 export default class DisplaySize extends BaseModule {
-  private display: any;
+  private display: HTMLElement | undefined;
 
   onCreate = () => {
     // Create the container to hold the size display

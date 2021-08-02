@@ -1,4 +1,4 @@
-import { BaseModule } from './BaseModule';
+import { BaseModule } from './baseModule';
 
 export default class Resize extends BaseModule {
   private boxes: any;

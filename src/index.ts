@@ -4,8 +4,9 @@ import DefaultOptions from './defaultOptions';
 import DisplaySize from './modules/displaySize';
 import Toolbar from './modules/toolbar';
 import Resize from './modules/resize';
+import Delete from './modules/delete';
 
-const knownModules: any = { DisplaySize, Toolbar, Resize };
+const knownModules: any = { DisplaySize, Toolbar, Resize, Delete };
 
 /**
  * Custom module for quilljs to allow user to resize <img> elements
@@ -175,7 +176,6 @@ export default class ImageEdit {
     });
   };
 
-  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   hide = () => {
     this.hideOverlay();
     this.removeModules();
