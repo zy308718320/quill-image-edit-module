@@ -55,7 +55,7 @@ export default class ImageEdit {
 
   initializeModules = () => {
     this.removeModules();
-    
+
     this.modules = this.moduleClasses.map(
       item => new (knownModules[item] || item)(this),
     );
@@ -71,7 +71,7 @@ export default class ImageEdit {
 
   onUpdate = () => {
     this.repositionElements();
-    
+
     this.modules.forEach(
       (module) => {
         module.onUpdate();
