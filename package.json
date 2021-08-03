@@ -20,6 +20,9 @@
   },
   "author": "evanzhou",
   "license": "MIT",
+  "files": [
+    "dist/**/*"
+  ],
   "bugs": {
     "url": "https://github.com/zy308718320/quill-image-edit-module/issues"
   },
