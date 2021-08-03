@@ -2,11 +2,11 @@
   "name": "quill-image-edit-module",
   "version": "0.1.1",
   "description": "A module for Quill rich text editor that allows editing of images.",
-  "main": "./dist/index.js",
+  "main": "./dist/image-edit.min.js",
   "types": "./dist/index.d.ts",
   "scripts": {
     "test": "jest --coverage --no-cache",
-    "coveralls": "cat ./coverage/lcov.info | coveralls",
+    "coveralls": "cat ./tests/coverage/lcov.info | coveralls",
     "build": "webpack",
     "build:dev": "webpack -w",
     "lint": "eslint --fix --ext .ts src/",

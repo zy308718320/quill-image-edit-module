@@ -1,5 +1,5 @@
 import Quill from 'quill';
-import ImageEdit from '../../index';
+import ImageEdit from '../../src/index';
 
 let imageEdit: any;
 

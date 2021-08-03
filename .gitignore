@@ -4,6 +4,7 @@ deploy_versions/
 .rn_temp/
 node_modules/
 .DS_Store
+/tests/coverage/
 
 # local env files
 .env.local
@@ -24,5 +25,3 @@ yarn-error.log*
 *.sln
 *.sw*
 /.cz-config.js
-/tests/coverage/
-/junit.xml

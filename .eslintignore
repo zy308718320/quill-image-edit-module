@@ -1,5 +1,5 @@
 config-overrides.js
 /dist/*
-*/tests/*
+/tests/*
 /config/*
 *.config.js

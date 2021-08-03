@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
   entry: './src/index.ts',
-  mode: 'development',
+  mode: 'production',
   devtool: 'hidden-source-map',
   module: {
     rules: [
@@ -25,7 +25,7 @@ module.exports = {
   output: {
     library: 'ImageEdit',
     libraryTarget: 'umd',
-    filename: 'index.js',
+    filename: 'image-edit.min.js',
     path: path.resolve(__dirname, 'dist'),
   },
 };
