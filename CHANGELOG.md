@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.2](https://github.com/zy308718320/quill-image-edit-module/compare/v0.1.1...v0.1.2) (2021-08-03)
+
+
+### Features
+
+* 调整测试覆盖率目录位置 ([246c235](https://github.com/zy308718320/quill-image-edit-module/commit/246c2359b43c02926aa82312318c8c5f483a9971))
+* 调整目录和压缩产物 ([6d98e35](https://github.com/zy308718320/quill-image-edit-module/commit/6d98e357f41a80b922da8784dab0c72547affdb4))
+
 ### 0.1.1 (2021-08-03)
 
 
