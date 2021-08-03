@@ -5,6 +5,10 @@ module.exports = {
   transform: {
     '^.+\\.tsx?$': 'ts-jest', // 匹配 .ts 或者 .tsx 结尾的文件
   },
+  moduleNameMapper: {
+    '^.+\\.svg$': '<rootDir>/src/tests/mocks/svgFileMock.ts',
+  },
+  testEnvironment: 'jsdom',
   collectCoverage: true, // 统计覆盖率
   coveragePathIgnorePatterns: [
     '<rootDir>/node_modules/',

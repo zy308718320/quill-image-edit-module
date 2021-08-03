@@ -103,7 +103,7 @@ export default class Resize extends BaseModule {
       document.body,
       this.img,
     ].forEach((el) => {
-      el.style.cursor = value;   // eslint-disable-line no-param-reassign
+      el.style.cursor = value;
     });
   };
 }
