@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.3](https://github.com/zy308718320/quill-image-edit-module/compare/v0.1.2...v0.1.3) (2021-08-03)
+
+
+### Bug Fixes
+
+* 修复Travis配置问题 ([a7a2552](https://github.com/zy308718320/quill-image-edit-module/commit/a7a2552623dfba2723d0959ce4f20d833566aad7))
+
 ### [0.1.2](https://github.com/zy308718320/quill-image-edit-module/compare/v0.1.1...v0.1.2) (2021-08-03)
 
 
