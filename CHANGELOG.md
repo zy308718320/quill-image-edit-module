@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.4](https://github.com/zy308718320/quill-image-edit-module/compare/v0.1.3...v0.1.4) (2021-08-03)
+
+
+### Features
+
+* 添加构建产物到npm包 ([3bdd30c](https://github.com/zy308718320/quill-image-edit-module/commit/3bdd30c1385ad402a7337d65a0f9665c4303c1fe))
+* 配置测试覆盖率徽标 ([122f2b0](https://github.com/zy308718320/quill-image-edit-module/commit/122f2b0d394ab677c7fb19601ee068853f466fec))
+
 ### [0.1.3](https://github.com/zy308718320/quill-image-edit-module/compare/v0.1.2...v0.1.3) (2021-08-03)
 
 
