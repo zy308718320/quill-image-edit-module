@@ -1,6 +1,6 @@
 {
   "name": "quill-image-edit-module",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "A module for Quill rich text editor that allows editing of images.",
   "main": "./dist/image-edit.min.js",
   "types": "./dist/index.d.ts",
