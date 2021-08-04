@@ -3,6 +3,7 @@ export default {
     'DisplaySize',
     'Toolbar',
     'Resize',
+    'Delete',
   ],
   deleteText: 'Delete',
   overlayStyles: {

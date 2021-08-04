@@ -2,6 +2,7 @@ export class BaseModule {
   protected overlay: any;
   protected img: any;
   protected hide: any;
+  protected remove: any;
   protected options: any;
   protected requestUpdate: any;
 
@@ -9,6 +10,7 @@ export class BaseModule {
     this.overlay = edit.overlay;
     this.img = edit.img;
     this.hide = edit.hide;
+    this.remove = edit.remove;
     this.options = edit.options;
     this.requestUpdate = edit.onUpdate;
   }

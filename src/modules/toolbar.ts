@@ -1,14 +1,7 @@
-import Quill from 'quill';
 import IconAlignLeft from 'quill/assets/icons/align-left.svg';
 import IconAlignCenter from 'quill/assets/icons/align-center.svg';
 import IconAlignRight from 'quill/assets/icons/align-right.svg';
 import { BaseModule } from './baseModule';
-
-const Parchment = Quill.import('parchment');
-
-const FloatStyle = new Parchment.Attributor.Style('float', 'float');
-const MarginStyle = new Parchment.Attributor.Style('margin', 'margin');
-const DisplayStyle = new Parchment.Attributor.Style('display', 'display');
 
 export default class Toolbar extends BaseModule {
   private toolbar: HTMLElement | undefined;
@@ -30,31 +23,54 @@ export default class Toolbar extends BaseModule {
       {
         icon: IconAlignLeft,
         apply: () => {
-          DisplayStyle.add(this.img, 'inline');
-          FloatStyle.add(this.img, 'left');
-          MarginStyle.add(this.img, '0 1em 1em 0');
+          this._setProperty('display', 'inline');
+          this._setProperty('float', 'left');
+          this._setProperty('margin', '0 1em 1em 0');
         },
-        isApplied: () => FloatStyle.value(this.img) == 'left',
+        isApplied: () => this._getProperty('float') === 'left',
       },
       {
         icon: IconAlignCenter,
         apply: () => {
-          DisplayStyle.add(this.img, 'block');
-          FloatStyle.remove(this.img);
-          MarginStyle.add(this.img, 'auto');
+          this._setProperty('display', 'block');
+          this._setProperty('float', '');
+          this._setProperty('margin', 'auto');
         },
-        isApplied: () => MarginStyle.value(this.img) == 'auto',
+        isApplied: () => this._getProperty('margin') === 'auto',
       },
       {
         icon: IconAlignRight,
         apply: () => {
-          DisplayStyle.add(this.img, 'inline');
-          FloatStyle.add(this.img, 'right');
-          MarginStyle.add(this.img, '0 0 1em 1em');
+          this._setProperty('display', 'inline');
+          this._setProperty('float', 'right');
+          this._setProperty('margin', '0 0 1em 1em');
         },
-        isApplied: () => FloatStyle.value(this.img) == 'right',
+        isApplied: () => this._getProperty('float') === 'right',
       },
     ];
+  };
+
+  _camelize(name: string): string {
+    const parts = name.split('-');
+    const rest = parts
+      .slice(1)
+      .map(function (part: string) {
+        return part[0].toUpperCase() + part.slice(1);
+      })
+      .join('');
+    return parts[0] + rest;
+  }
+
+  _setProperty = (key: string, value: string) => {
+    this.img.style[this._camelize(key)] = value;
+  };
+
+  _getProperty = (key: string) => {
+    return this.img.style[this._camelize(key)];
+  };
+
+  _removeProperty = (key: string) => {
+    this.img.style[this._camelize(key)] = '';
   };
 
   _addToolbarButtons = () => {
@@ -68,10 +84,10 @@ export default class Toolbar extends BaseModule {
         buttons.forEach((button: HTMLElement) => button.style.filter = '');
         if (alignment.isApplied()) {
           // If applied, unapply
-          FloatStyle.remove(this.img);
-          MarginStyle.remove(this.img);
-          DisplayStyle.remove(this.img);
-        }	else {
+          this._removeProperty('display');
+          this._removeProperty('margin');
+          this._removeProperty('float');
+        } else {
           // otherwise, select button and apply
           this._selectButton(button);
           alignment.apply();

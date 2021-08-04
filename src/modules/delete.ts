@@ -1,4 +1,3 @@
-import Quill from 'quill';
 import { BaseModule } from './baseModule';
 
 export default class Delete extends BaseModule {
@@ -25,8 +24,8 @@ export default class Delete extends BaseModule {
 
   handleDelete = () => {
     if (this.img) {
-      Quill.find(this.img).deleteAt(0);
-      this.hide();
+      this.remove();
     }
+    this.hide();
   };
 }

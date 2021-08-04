@@ -1,5 +1,4 @@
-import Quill from 'quill';
-import { defaultsDeep } from 'lodash';
+import deepmerge from 'deepmerge';
 import DefaultOptions from './defaultOptions';
 import DisplaySize from './modules/displaySize';
 import Toolbar from './modules/toolbar';
@@ -33,7 +32,7 @@ export default class ImageEdit {
     }
 
     // Apply options to default options
-    this.options = defaultsDeep({}, options, DefaultOptions);
+    this.options = deepmerge(DefaultOptions, options);
 
     // (see above about moduleClasses)
     if (moduleClasses) {
@@ -176,6 +175,12 @@ export default class ImageEdit {
     });
   };
 
+  remove = () => {
+    if(this.img) {
+      this.img.parentNode?.removeChild(this.img);
+    }
+  }
+
   hide = () => {
     this.hideOverlay();
     this.removeModules();
@@ -198,7 +203,7 @@ export default class ImageEdit {
   checkImage = (evt: KeyboardEvent) => {
     if (this.img) {
       if (evt.keyCode == 46 || evt.keyCode == 8) {
-        Quill.find(this.img).deleteAt(0);
+        this.remove();
       }
       this.hide();
     }
