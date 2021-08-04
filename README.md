@@ -7,13 +7,20 @@
 
 A module for Quill rich text editor that allows editing of images.
 
+based on [quill-image-resize-module](https://github.com/kensnyder/quill-image-resize-module) development
+
+### Optimization
+
+- TypeScript Support
+- Delete tool
+
 [![NPM](https://nodei.co/npm/quill-image-edit-module.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/quill-image-edit-module/)
 
-# Demo
+## Demo
 
 ### Vanilla
 
-
+[vanilla](https://codesandbox.io/s/small-https-lqjxo)
 
 ### React
 
@@ -26,3 +33,28 @@ A module for Quill rich text editor that allows editing of images.
 ### Vue3
 
 [vue3-quill](https://codesandbox.io/s/determined-wozniak-b4ytr)
+
+## Install
+
+```
+npm i quill-image-edit-module -S
+# or
+yarn add quill-image-edit-module -S
+```
+
+## Usage
+
+```
+import Quill from 'quill';
+import ImageEdit from 'quill-image-edit-module';
+
+Quill.register('modules/imageEdit', ImageEdit);
+
+const modules = {
+  // ...
+  imageEdit: {
+    // ...
+    modules: ['Resize', 'DisplaySize', 'Toolbar', 'Delete'],
+  },
+};
+```
