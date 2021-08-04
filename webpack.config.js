@@ -25,6 +25,8 @@ module.exports = {
   output: {
     library: 'ImageEdit',
     libraryTarget: 'umd',
+    libraryExport: "default",
+    globalObject: "this",
     filename: 'image-edit.min.js',
     path: path.resolve(__dirname, 'dist'),
   },
